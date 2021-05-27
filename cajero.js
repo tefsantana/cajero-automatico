@@ -1,17 +1,5 @@
-/*
-Desarrollar un sistemita de cajero automático
-utilizar prompt , verificar la clave correcta
-para mostrar un menu:
-1. consulta saldo
-2. depósito
-3.retiro
-4. transferencia , etc
-utilizar el dom para colocar los mensajes
-variables a usar:
-clave, saldo, opción, monto
-*/
 var clave, saldo = 300, opcion, monto, claveCo = 123;
-var div = document.querySelector("div");  //selecciona una etiqueta, en este caso div del html
+var div = document.querySelector("div");  
 clave = parseInt(window.prompt("Bienvenido al Banco Nación. Escriba la clave de cajero: "));
 if (clave == claveCo) {
     //mostrar el menú
@@ -22,13 +10,13 @@ if (clave == claveCo) {
             break;
         case 2:
             monto = parseInt(window.prompt("Escriba el monto a depositar: "));
-            saldo += monto; // saldo = saldo + monto
+            saldo += monto; 
             div.innerHTML = "Depósito realizado correctamente, tu saldo actual es " + saldo;
             break;
         case 3:
             monto = parseInt(window.prompt("Escriba el monto a retirar: "));
             if (monto < saldo){
-                saldo -= monto; // saldo = saldo - monto
+                saldo -= monto; 
                 div.innerHTML = "Retiro realizado correctamente. Su saldo actual es " + saldo;
             } else {
                 div.innerHTML = "Saldo insuficiente.";
